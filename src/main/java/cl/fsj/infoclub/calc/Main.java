@@ -20,8 +20,8 @@ public class Main {
 			System.out.println("\nMenu de operacion matematica.\n(Ingrese un numero valido para seleccionar la operacion)\n");
 			System.out.println("1) Sumar.");
 			System.out.println("2) Restar.");
-			System.out.println("3) Multiplicar.");
-			System.out.println("4) Dividir.");
+			System.out.println("3) Dividir.");
+			System.out.println("4) Multiplicar.");
 			System.out.println("5) Salir.");
 			opcion = Integer.parseInt(bufferedReader.readLine());
 		}while(opcion >5 || opcion < 0);
