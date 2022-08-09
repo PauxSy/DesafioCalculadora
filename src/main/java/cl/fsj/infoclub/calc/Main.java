@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 public class Main {
 	static int opcion;
 	static BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-	static Calculadora calculadora;
+	static Calculadora calculadora = new Calculadora();
 	
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		do {
@@ -17,7 +17,7 @@ public class Main {
 	
 	public static int menu() throws NumberFormatException, IOException {
 		do {
-			System.out.println("Menu de operacion matematica.\n(Ingrese un numero valido para seleccionar la operacion)\n");
+			System.out.println("\nMenu de operacion matematica.\n(Ingrese un numero valido para seleccionar la operacion)\n");
 			System.out.println("1) Sumar.");
 			System.out.println("2) Restar.");
 			System.out.println("3) Multiplicar.");
@@ -31,7 +31,7 @@ public class Main {
 	}
 	
 	public static void operar(int opcion) throws NumberFormatException, IOException {
-		double a,b;
+		double a,b,resultado = 0;
 		switch(opcion) {
 		
 			case 1:
@@ -40,7 +40,7 @@ public class Main {
 				
 				System.out.println("Ingrese el segundo digito a sumar. ");
 				b = Double.parseDouble(bufferedReader.readLine());
-				calculadora.sumar(a,b);
+				resultado= calculadora.sumar(a,b);
 				break;
 				
 			case 2:
@@ -49,7 +49,7 @@ public class Main {
 				
 				System.out.println("Ingrese el sustraendo. ");
 				b = Double.parseDouble(bufferedReader.readLine());
-				calculadora.restar(a,b);
+				resultado=calculadora.restar(a,b);
 				break;
 				
 			case 3:
@@ -63,7 +63,7 @@ public class Main {
 						System.out.println("Ingrese un divisor distinto de 0.");
 					}
 				}while(b==0);
-				calculadora.dividir(a,b);
+				resultado=calculadora.dividir(a,b);
 				break;
 				
 			case 4:
@@ -72,7 +72,7 @@ public class Main {
 				
 				System.out.println("Ingrese el segundo factor. ");
 				b = Double.parseDouble(bufferedReader.readLine());
-				calculadora.multiplicar(a,b);
+				resultado=calculadora.multiplicar(a,b);
 				break;
 				
 			case 5:
@@ -80,5 +80,6 @@ public class Main {
 				break;
 				
 		}
+		if(opcion!=5)System.out.println("\nEl resultado es: "+resultado);
 	}
 }
