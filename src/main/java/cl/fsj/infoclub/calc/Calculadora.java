@@ -1,3 +1,4 @@
+package cl.fsj.infoclub.calc;
 
 public class Calculadora {
 	private double n1, n2;
