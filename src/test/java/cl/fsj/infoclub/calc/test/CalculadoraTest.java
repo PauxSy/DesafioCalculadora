@@ -36,9 +36,8 @@ public class CalculadoraTest {
 	@Test
 	public void testDivision(){
 		log.info("info test division");
-		double respDivision = calcu.dividir(10.0,5.3);
-		double x = Math.round(respDivision*100.0)/100.0;
-		assertEquals(1.89,x);		
+		double respDivision = calcu.dividir(10.0,5.0);
+		assertEquals(2.0,respDivision);		
 	}	
 	
 }
